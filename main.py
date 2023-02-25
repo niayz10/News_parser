@@ -47,6 +47,11 @@ def get_data(res_id, url):
                         "110.0.0.0 Safari / 537.36 "
     }
     pagination = 1
+    if os.path.exists("data"):
+        print("The folder already exist")
+    else:
+        os.mkdir("data")
+
     while requests.get(url + f'/{pagination}', headers):
 
         req = requests.get(url + f'/{pagination}', headers)
