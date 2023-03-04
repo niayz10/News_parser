@@ -11,6 +11,7 @@ def get_not_date(project_date):
     elif len(not_date) == 2:
         not_date = not_date[0].split()
         return f'{not_date[2]}-{not_date[1]}-{not_date[0]}'
-
+    if isinstance(not_date, list):
+        return ''.join(not_date)
     not_date = not_date.split()
     return f'{not_date[2]}-{not_date[1]}-{not_date[0]}'
